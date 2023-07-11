@@ -1,6 +1,6 @@
 # Express API REST
 
-API REST built with TypeScript, NodeJS and Express.
+Post API REST built with TypeScript, NodeJS and Express.
 
 ## Table of contents
 
@@ -10,7 +10,7 @@ API REST built with TypeScript, NodeJS and Express.
 
 ## General info
 
-API REST built with TypeScript, NodeJS and Express.
+Posts API that allows users to manage posts, including creating, retrieving, updating, and deleting posts.
 
 ## Technologies
 
@@ -23,5 +23,4 @@ Project is created with:
 ## Setup
 
 1. Install it locally using `npm install`
-2. Compile the project with `npm run tsc`
-3. Run the project with `npm start`
+2. Run the project with `npm run dev`
