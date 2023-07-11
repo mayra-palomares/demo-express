@@ -1,0 +1,24 @@
+{
+  "name": "demo-express",
+  "version": "1.0.0",
+  "description": "API REST built with TypeScript, NodeJS and Express",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayra-palomares/demo-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayra-palomares/demo-express/issues"
+  },
+  "homepage": "https://github.com/mayra-palomares/demo-express#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
