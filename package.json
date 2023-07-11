@@ -20,5 +20,8 @@
   "homepage": "https://github.com/mayra-palomares/demo-express#readme",
   "devDependencies": {
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "express": "4.18.2"
   }
 }
