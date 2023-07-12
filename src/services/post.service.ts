@@ -1,5 +1,5 @@
 import { CreatePostRequest, Post } from '../types'
-import postData from './../mocks/posts.json'
+import postData from '../mocks/posts.json'
 
 const posts: Post[] = postData.posts
 
