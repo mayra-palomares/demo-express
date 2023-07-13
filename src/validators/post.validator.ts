@@ -13,9 +13,11 @@ export const postValidator = checkSchema({
   },
   userId: {
     notEmpty: true,
-    isInt: true
+    isInt: true,
+    errorMessage: 'Incorrect or missing body'
   },
   tags: {
-    isArray: true
+    isArray: true,
+    errorMessage: 'Incorrect or missing body'
   }
 })
