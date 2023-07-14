@@ -1,6 +1,6 @@
 # Express API REST
 
-Post API REST built with TypeScript, NodeJS and Express.
+Tasks API REST built with TypeScript, NodeJS and Express.
 
 ## Table of contents
 
@@ -10,7 +10,7 @@ Post API REST built with TypeScript, NodeJS and Express.
 
 ## General info
 
-Posts API that allows users to manage posts, including creating, retrieving, updating, and deleting posts.
+Tasks API that allows users to manage tasks, including creating, retrieving, updating, and deleting tasks.
 
 ## Technologies
 

@@ -1,10 +1,9 @@
-export interface Post {
+export interface Task {
   id: number
   title: string
-  body: string
-  userId: number
+  description: string
   tags: string[]
-  reactions: number
+  completed: boolean
 }
 
-export type CreatePostRequest = Omit<Post, 'id' | 'reactions'>
+export type CreateTaskRequest = Omit<Task, 'id' | 'completed'>

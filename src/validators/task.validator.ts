@@ -1,23 +1,20 @@
 import { checkSchema } from 'express-validator'
 
-export const postValidator = checkSchema({
+const taskValidator = checkSchema({
   title: {
     notEmpty: true,
     isString: true,
     errorMessage: 'Incorrect or missing title'
   },
-  body: {
+  description: {
     notEmpty: true,
     isString: true,
-    errorMessage: 'Incorrect or missing body'
-  },
-  userId: {
-    notEmpty: true,
-    isInt: true,
-    errorMessage: 'Incorrect or missing body'
+    errorMessage: 'Incorrect or missing description'
   },
   tags: {
     isArray: true,
     errorMessage: 'Incorrect or missing body'
   }
 })
+
+export default taskValidator
