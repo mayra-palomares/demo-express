@@ -1,6 +1,6 @@
 import { checkSchema } from 'express-validator'
 
-export const postValidator = checkSchema({
+const taskValidator = checkSchema({
   title: {
     notEmpty: true,
     isString: true,
@@ -16,3 +16,5 @@ export const postValidator = checkSchema({
     errorMessage: 'Incorrect or missing body'
   }
 })
+
+export default taskValidator
