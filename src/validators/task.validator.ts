@@ -6,15 +6,10 @@ export const postValidator = checkSchema({
     isString: true,
     errorMessage: 'Incorrect or missing title'
   },
-  body: {
+  description: {
     notEmpty: true,
     isString: true,
-    errorMessage: 'Incorrect or missing body'
-  },
-  userId: {
-    notEmpty: true,
-    isInt: true,
-    errorMessage: 'Incorrect or missing body'
+    errorMessage: 'Incorrect or missing description'
   },
   tags: {
     isArray: true,
