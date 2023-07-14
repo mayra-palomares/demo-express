@@ -26,9 +26,19 @@ export const addTask = (request: CreateTaskRequest): Task => {
 }
 
 export const completeTask = (id: number): Task | undefined => {
-  return tasks.find(task => task.id === id)
+  const task = getTaskById(id)
+  if (task != null) {
+    task.completed = true
+  }
+
+  return task
 }
 
-export const updateTask = (id: number, _request: Task): Task | undefined => {
-  return tasks.find(task => task.id === id)
+export const updateTask = (id: number, request: Task): Task | undefined => {
+  let task = getTaskById(id)
+  if (task != null) {
+    task = { ...task, ...request }
+  }
+
+  return task
 }
