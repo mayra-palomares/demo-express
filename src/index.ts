@@ -1,15 +1,19 @@
 import express from 'express'
 import tasksRouter from './routes/task.router'
 import ErrorHandler from './middlewares/ErrorHandler'
+import connectDB from './db/mongo.database'
+import Config from './config'
 
 const app = express()
 app.use(express.json()) // middleware to transform req.body to json
+
+connectDB()
 
 app.use('/api/tasks', tasksRouter)
 
 app.use(ErrorHandler)
 
-const PORT = 3000
+const PORT = Config.port
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+  console.log(`Server running on port ${PORT.toString()}`)
 })
