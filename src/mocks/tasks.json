@@ -1,0 +1,13 @@
+{
+    "tasks": [
+        {
+            "id": 1,
+            "title": "Create a new project",
+            "description": "Need to create a new project",
+            "tags": [
+                "project"
+            ],
+            "completed": false
+        }
+    ]
+}

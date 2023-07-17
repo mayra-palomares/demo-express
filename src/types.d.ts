@@ -1,10 +1,8 @@
-export interface Post {
-  id: number
+export interface ITask extends Document {
   title: string
-  body: string
-  userId: number
+  description: string
   tags: string[]
-  reactions: number
+  completed: boolean
 }
 
-export type CreatePostRequest = Omit<Post, 'id' | 'reactions'>
+export type CreateTaskRequest = Pick<ITask, 'title' | 'description' | 'tags' | 'completed'>
