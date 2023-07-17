@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import Config from './../config'
+import Config from '../config'
 
 const connectToMongoDB = async (): Promise<any> => {
   await mongoose.connect(Config.dbUrl)

@@ -1,19 +1,22 @@
 import { Request, Response } from 'express'
-import * as TaskService from '../services/task.service'
+import * as TaskService from '../services/Task.service'
 
 export const getTasks = (_req: Request, res: Response): void => {
-  const tasks = TaskService.getTasks()
-  res.send(tasks)
+  TaskService.getTasks().then(tasks => {
+    res.send(tasks)
+  }).catch(err => console.error(err))
 }
 
 export const getTask = (req: Request, res: Response): void => {
-  const task = TaskService.getTaskById(+req.params.id)
-  res.send(task)
+  TaskService.getTaskById(+req.params.id).then(task => {
+    res.send(task)
+  }).catch(err => console.error(err))
 }
 
 export const addTask = (req: Request, res: Response): void => {
-  const newTask = TaskService.addTask(req.body)
-  res.send(newTask)
+  TaskService.addTask(req.body).then(task => {
+    res.send(task)
+  }).catch(err => console.error(err))
 }
 
 export const completeTask = (req: Request, res: Response): void => {
@@ -21,7 +24,7 @@ export const completeTask = (req: Request, res: Response): void => {
   res.send(task)
 }
 
-export const updateTask = (req: Request, res: Response): void => {
-  const task = TaskService.updateTask(+req.params.id, req.body)
-  res.send(task)
+export const updateTask = (_req: Request, res: Response): void => {
+  // const task = TaskService.updateTask(+req.params.id, req.body)
+  res.send({})
 }

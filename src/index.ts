@@ -1,7 +1,7 @@
 import express from 'express'
-import tasksRouter from './routes/task.router'
+import tasksRouter from './routes/Task.router'
 import ErrorHandler from './middlewares/ErrorHandler'
-import connectDB from './db/mongo.database'
+import connectDB from './db/Mongo.database'
 import Config from './config'
 
 const app = express()
