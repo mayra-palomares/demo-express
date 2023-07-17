@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { validationResult } from 'express-validator'
+import { param, validationResult } from 'express-validator'
 
 const validate = (req: Request, res: Response, next: Function): Response => {
   const errors = validationResult(req)
@@ -12,5 +12,7 @@ const validate = (req: Request, res: Response, next: Function): Response => {
     errors: errors.array()
   })
 }
+
+export const validateID = param('id').isMongoId().withMessage('Invalid ID')
 
 export default validate

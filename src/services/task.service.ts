@@ -1,44 +1,39 @@
-import { CreateTaskRequest, Task } from '../types'
-import taskData from '../mocks/tasks.json'
+import { CreateTaskRequest, ITask } from '../types'
+import * as TaskRepository from './../repositories/Task.repository'
 
-const tasks: Task[] = taskData.tasks
+export const getTasks = async (): Promise<ITask[]> => {
+  const tasks = await TaskRepository.getAll()
+  return tasks
+}
 
-export const getTasks = (): Task[] => tasks
-
-export const getTaskById = (id: number): Task | undefined => {
-  const task = tasks.find(task => task.id === id)
+export const getTaskById = async (id: string): Promise<ITask> => {
+  const task = await TaskRepository.findById(id)
   if (task == null) {
     throw new Error('Task not found')
   }
   return task
 }
 
-export const addTask = (request: CreateTaskRequest): Task => {
-  const newTask: Task = {
-    id: tasks.length + 1,
-    ...request,
-    completed: false
+export const addTask = async (request: CreateTaskRequest): Promise<ITask> => {
+  const newTask = await TaskRepository.create(request)
+  if (newTask == null) {
+    throw new Error('Task was not created')
   }
-
-  tasks.push(newTask)
-
   return newTask
 }
 
-export const completeTask = (id: number): Task | undefined => {
-  const task = getTaskById(id)
-  if (task != null) {
-    task.completed = true
+export const completeTask = async (id: string): Promise<ITask> => {
+  const updatedTask = await TaskRepository.completeTask(id)
+  if (updatedTask == null) {
+    throw new Error('Task was not completed')
   }
-
-  return task
+  return updatedTask
 }
 
-export const updateTask = (id: number, request: Task): Task | undefined => {
-  let task = getTaskById(id)
-  if (task != null) {
-    task = { ...task, ...request }
+export const updateTask = async (id: string, request: ITask): Promise<ITask> => {
+  const updatedTask = await TaskRepository.update(id, request)
+  if (updatedTask == null) {
+    throw new Error('Task was not updated')
   }
-
-  return task
+  return updatedTask
 }
