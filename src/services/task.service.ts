@@ -1,13 +1,13 @@
 import { CreateTaskRequest, ITask } from '../types'
-import Task from '../models/Task.model'
+import * as TaskRepository from './../repositories/Task.repository'
 
 export const getTasks = async (): Promise<ITask[]> => {
-  const tasks = await Task.find({})
+  const tasks = await TaskRepository.getAll()
   return tasks
 }
 
-export const getTaskById = async (id: number): Promise<ITask> => {
-  const task = await Task.findById(id)
+export const getTaskById = async (id: string): Promise<ITask> => {
+  const task = await TaskRepository.findById(id)
   if (task == null) {
     throw new Error('Task not found')
   }
@@ -15,27 +15,25 @@ export const getTaskById = async (id: number): Promise<ITask> => {
 }
 
 export const addTask = async (request: CreateTaskRequest): Promise<ITask> => {
-  request.completed = false
-  const newTask = await Task.create(request)
+  const newTask = await TaskRepository.create(request)
   if (newTask == null) {
     throw new Error('Task was not created')
   }
   return newTask
 }
 
-export const completeTask = async (id: number): Promise<ITask> => {
-  const task = await getTaskById(id)
-  if (task != null) {
-    task.completed = true
+export const completeTask = async (id: string): Promise<ITask> => {
+  const updatedTask = await TaskRepository.completeTask(id)
+  if (updatedTask == null) {
+    throw new Error('Task was not completed')
   }
-  return task
+  return updatedTask
 }
 
-/* export const updateTask = (id: number, request: ITask): ITask | undefined => {
-  let task = getTaskById(id)
-  if (task != null) {
-    task = { ...task, ...request }
+export const updateTask = async (id: string, request: ITask): Promise<ITask> => {
+  const updatedTask = await TaskRepository.update(id, request)
+  if (updatedTask == null) {
+    throw new Error('Task was not updated')
   }
-
-  return task
-} */
+  return updatedTask
+}

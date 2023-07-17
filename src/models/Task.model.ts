@@ -2,10 +2,10 @@ import mongoose from 'mongoose'
 import { ITask } from '../types'
 
 const TaskSchema = new mongoose.Schema<ITask>({
-  title: String,
-  description: String,
+  title: { type: String, required: [true, 'Title is missing'], trim: true },
+  description: { type: String, required: [true, 'Description is missing'], trim: true },
   tags: [String],
-  completed: Boolean
+  completed: { type: Boolean, default: false }
 })
 
 const Task = mongoose.model<ITask>('Task', TaskSchema)

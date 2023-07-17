@@ -8,7 +8,7 @@ export const getTasks = (_req: Request, res: Response): void => {
 }
 
 export const getTask = (req: Request, res: Response): void => {
-  TaskService.getTaskById(+req.params.id).then(task => {
+  TaskService.getTaskById(req.params.id).then(task => {
     res.send(task)
   }).catch(err => console.error(err))
 }
@@ -20,11 +20,13 @@ export const addTask = (req: Request, res: Response): void => {
 }
 
 export const completeTask = (req: Request, res: Response): void => {
-  const task = TaskService.completeTask(+req.params.id)
-  res.send(task)
+  TaskService.completeTask(req.params.id).then(task => {
+    res.send(task)
+  }).catch(err => console.error(err))
 }
 
-export const updateTask = (_req: Request, res: Response): void => {
-  // const task = TaskService.updateTask(+req.params.id, req.body)
-  res.send({})
+export const updateTask = (req: Request, res: Response): void => {
+  TaskService.updateTask(req.params.id, req.body).then(task => {
+    res.send(task)
+  }).catch(err => console.error(err))
 }
