@@ -1,0 +1,53 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Tasks REST API",
+      "description": "API REST built with TypeScript, NodeJS and Express"
+    },
+    "paths": {
+      "/api/tasks": {
+        "get": {
+          "summary": "Get all tasks",
+          "operationId": "getTasks",
+          "responses": {
+            "200": {
+              "description": "List of tasks",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Task"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Task": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "array"
+            },
+            "completed": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+  
