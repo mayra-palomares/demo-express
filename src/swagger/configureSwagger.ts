@@ -16,4 +16,4 @@ export const configureSwaggerWithSpecs = (app: Application): void => {
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 }
 
-export default configureSwaggerWithJSON
+export default configureSwaggerWithSpecs
