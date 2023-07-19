@@ -28,7 +28,6 @@ Tasks API that allows users to manage tasks, including creating, retrieving, upd
 
    ```bash
     API_URL=
-    PORT=
     DB_CONNECTION_URL=
    ```
 

@@ -4,7 +4,6 @@ import connectDB from './db/Mongo.database'
 import ErrorHandler from './middlewares/ErrorHandler'
 import InvalidPath from './middlewares/InvalidPath'
 import tasksRouter from './routes/Task.router'
-import Config from './config'
 
 const app = express()
 app.use(express.json()) // middleware to transform req.body to json
@@ -18,7 +17,4 @@ configureSwagger(app)
 app.use(InvalidPath)
 app.use(ErrorHandler)
 
-const PORT = Config.port
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT.toString()}`)
-})
+export default app
