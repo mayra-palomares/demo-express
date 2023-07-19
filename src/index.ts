@@ -1,9 +1,9 @@
 import express from 'express'
 import configureSwagger from './swagger/configureSwagger'
-import connectDB from './db/Mongo.database'
+import connectDB from './db/mongo.database'
 import ErrorHandler from './middlewares/ErrorHandler'
 import InvalidPath from './middlewares/InvalidPath'
-import tasksRouter from './routes/Task.router'
+import tasksRouter from './routes/task.router'
 
 const app = express()
 app.use(express.json()) // middleware to transform req.body to json
