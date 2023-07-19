@@ -2,8 +2,8 @@ import swaggerJsdoc from 'swagger-jsdoc'
 import Config from './../config'
 
 const options = {
-  openapi: '3.0.0',
   definition: {
+    openapi: '3.0.0',
     info: {
       version: '1.0.0',
       title: 'Tasks API',
