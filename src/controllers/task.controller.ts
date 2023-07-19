@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import * as TaskService from '../services/Task.service'
+import * as TaskService from '../services/task.service'
 import asyncWrapper from '../middlewares/AsyncWrapper'
 
 export const getTasks = asyncWrapper(async (_req: Request, res: Response) => {

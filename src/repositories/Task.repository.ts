@@ -1,5 +1,5 @@
 import { CreateTaskRequest, ITask } from '../types'
-import Task from '../models/Task.model'
+import Task from '../models/task.model'
 
 export const getAll = async (): Promise<ITask[]> => {
   return await Task.find({})
