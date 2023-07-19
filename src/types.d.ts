@@ -5,4 +5,4 @@ export interface ITask extends Document {
   completed: boolean
 }
 
-export type CreateTaskRequest = Pick<ITask, 'title' | 'description' | 'tags' | 'completed'>
+export type CreateTaskRequest = Pick<ITask, 'title' | 'description' | 'tags'>

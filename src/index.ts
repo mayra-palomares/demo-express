@@ -1,7 +1,9 @@
 import express from 'express'
-import tasksRouter from './routes/Task.router'
-import ErrorHandler from './middlewares/ErrorHandler'
+import configureSwagger from './swagger/configureSwagger'
 import connectDB from './db/Mongo.database'
+import ErrorHandler from './middlewares/ErrorHandler'
+import InvalidPath from './middlewares/InvalidPath'
+import tasksRouter from './routes/Task.router'
 import Config from './config'
 
 const app = express()
@@ -11,6 +13,9 @@ connectDB()
 
 app.use('/api/tasks', tasksRouter)
 
+configureSwagger(app)
+
+app.use(InvalidPath)
 app.use(ErrorHandler)
 
 const PORT = Config.port
