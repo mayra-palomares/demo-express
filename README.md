@@ -27,6 +27,8 @@ Tasks API that allows users to manage tasks, including creating, retrieving, upd
 3. Create a .env file in the root directory with the following variables:
 
    ```bash
+    API_URL=
+    PORT=
     DB_CONNECTION_URL=
    ```
 
