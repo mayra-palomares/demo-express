@@ -1,5 +1,5 @@
 import { CreateTaskRequest, ITask } from '../types'
-import * as TaskRepository from '../repositories/Task.repository'
+import * as TaskRepository from '../repositories/task.repository'
 
 export const getTasks = async (): Promise<ITask[]> => {
   const tasks = await TaskRepository.getAll()

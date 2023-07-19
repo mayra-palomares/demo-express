@@ -1,7 +1,7 @@
 import express from 'express'
-import * as TaskController from '../controllers/Task.controller'
+import * as TaskController from '../controllers/task.controller'
 import validate, { validateID } from '../validators/validate'
-import taskValidator from '../validators/Task.validator'
+import taskValidator from '../validators/task.validator'
 
 const router = express.Router()
 
