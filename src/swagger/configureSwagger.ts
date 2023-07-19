@@ -6,11 +6,12 @@ import Config from '../config'
 
 export const configureSwaggerWithJSON = (app: Application): void => {
   const processedSwagger = JSON.stringify(swaggerJson).replace('{{API_BASE_URL}}', Config.apiUrl)
-  app.use('/', express.static('node_modules/swagger-ui-dist/', { index: false }), swaggerUi.serve, swaggerUi.setup(JSON.parse(processedSwagger)))
+  const swaggerDocs = JSON.parse(processedSwagger)
+  app.use('/', express.static('node_modules/swagger-ui-dist/', { index: false }), swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 
 export const configureSwaggerWithSpecs = (app: Application): void => {
   app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 }
 
-export default configureSwaggerWithJSON
+export default configureSwaggerWithSpecs
