@@ -2,12 +2,13 @@
   "name": "demo-express",
   "version": "1.0.0",
   "description": "API REST built with TypeScript, NodeJS and Express",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "tsc": "tsc",
     "dev": "ts-node-dev src/index.ts",
     "start": "node build/index.js ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build": "echo hello"
   },
   "repository": {
     "type": "git",
