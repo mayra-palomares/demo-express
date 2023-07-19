@@ -19,6 +19,7 @@ Tasks API that allows users to manage tasks, including creating, retrieving, upd
 - Express
 - MongoDB
 - Mongoose
+- Swagger
 
 ## Setup
 
