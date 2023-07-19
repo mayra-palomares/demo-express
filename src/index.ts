@@ -17,4 +17,9 @@ configureSwagger(app)
 app.use(InvalidPath)
 app.use(ErrorHandler)
 
+/* const PORT = 3000
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT.toString()}`)
+}) */
+
 export default app
