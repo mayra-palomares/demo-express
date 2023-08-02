@@ -23,7 +23,7 @@ export const addTask = async (request: CreateTaskRequest): Promise<ITask> => {
 }
 
 export const completeTask = async (id: string): Promise<ITask> => {
-  const updatedTask = await TaskRepository.completeTask(id)
+  const updatedTask = await TaskRepository.completeTask(id, true)
   if (updatedTask == null) {
     throw new Error('Task was not completed')
   }
@@ -36,4 +36,8 @@ export const updateTask = async (id: string, request: ITask): Promise<ITask> => 
     throw new Error('Task was not updated')
   }
   return updatedTask
+}
+
+export const deleteTask = async (id: string): Promise<void> => {
+  await TaskRepository.deleteTask(id)
 }
