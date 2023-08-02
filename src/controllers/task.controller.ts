@@ -26,3 +26,8 @@ export const updateTask = asyncWrapper(async (req: Request, res: Response) => {
   const task = await TaskService.updateTask(req.params.id, req.body)
   res.send(task)
 })
+
+export const deleteTask = asyncWrapper(async (req: Request, res: Response) => {
+  await TaskService.deleteTask(req.params.id)
+  res.send({})
+})

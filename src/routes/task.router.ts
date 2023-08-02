@@ -10,5 +10,6 @@ router.get('/:id', validateID, validate, TaskController.getTask)
 router.post('/', taskValidator, validate, TaskController.addTask)
 router.post('/:id/complete', validateID, validate, TaskController.completeTask)
 router.put('/:id', validateID, validate, TaskController.updateTask)
+router.delete('/:id', validateID, validate, TaskController.deleteTask)
 
 export default router
